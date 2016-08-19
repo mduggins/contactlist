@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ContactList">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Contactly</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js" charset="utf-8"></script>
+  <script src="/js/contact.js" charset="utf-8"></script>
+</head>
+<body ng-controller="contactCtrl as clCtrl">
+  <form>
+    <input type="text" ng-model="clCtrl.contact.name">
+    <input type="text" ng-model="clCtrl.contact.address">
+    <input type="text" ng-model="clCtrl.contact.city">
+    <input type="text" ng-model="clCtrl.contact.state">
+    <input type="text" ng-model="clCtrl.contact.zip">
+    <button type="submit" ng-click="clCtrl.create()">Submit</button>
+  </form>
+</body>
+</html>
