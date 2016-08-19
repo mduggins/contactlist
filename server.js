@@ -22,11 +22,12 @@ app.get('/', (req, res) => {
   res.send('this is from the server');
 });
 
-app.get('/contacts', (req, res) => {
-
-  Contact.find({}, (req, res) => {
-    res.sendFile('list.html', {root: '/public/html'})
-  })  
+app.get('/contacts/all', (req, res) => {
+  Contact.find({})
+    .populate('contacts')
+    .exec(function(err, contacts){
+      res.json(contacts)
+    })
 });
 
 app.post('/contact/create', (req, res) => {

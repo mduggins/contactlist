@@ -14,6 +14,12 @@ angular.module('ContactList')
       clCtrl.contact = null
     }
 
+    clCtrl.showList = function(){
+      contactFact.getContacts().then(function(response){
+        clCtrl.contactList = response.data;
+      })
+    }
+
   }
 
 angular.module('ContactList')
@@ -24,6 +30,9 @@ angular.module('ContactList')
     return {
       create: function(contactData){
         return $http.post('/contact/create', contactData)
+      },
+      getContacts: function($http){
+        return $http.get('/contacts/all')
       }
     }
   }
