@@ -27,7 +27,7 @@ app.get('/contacts/all', (req, res) => {
     .populate('contacts')
     .exec(function(err, contacts){
       res.json(contacts)
-    })
+    });
 });
 
 app.post('/contact/create', (req, res) => {

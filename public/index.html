@@ -17,5 +17,10 @@
     <input type="text" ng-model="clCtrl.contact.zip">
     <button type="submit" ng-click="clCtrl.create()">Submit</button>
   </form>
+  <div class="contactList">
+    <ul>
+      <li ng-repeat="contact in clCtrl.contactList">{{contact.name}}</li>
+    </ul>
+  </div>
 </body>
 </html>
